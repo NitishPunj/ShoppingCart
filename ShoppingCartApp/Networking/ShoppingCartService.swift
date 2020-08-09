@@ -12,8 +12,8 @@ protocol ShoppingCartServiceProtocol {
     
     func getProducts(completion: @escaping (Result<[Product], APIError>) -> Void)
     func getCart(completion: @escaping (Result<[CartItem], APIError>) -> Void)
-    func removeProductFromCart(_ id: Int, completion: @escaping  (APIError?) -> Void)
-    func addProduct(_ productId: Int, completion: @escaping  (APIError?) -> Void)
+    func removeProduct(_ id: Int, completion: @escaping  (APIError?) -> Void)
+    func addProduct(_ productId: Int, completion: @escaping  (Result<Void, APIError>) -> Void)
 }
 
 
@@ -77,7 +77,7 @@ class ShoppingCartService: ShoppingCartServiceProtocol {
         }
     }
     
-    func removeProductFromCart(_ id: Int, completion: @escaping (APIError?) -> Void) {
+    func removeProduct(_ id: Int, completion: @escaping (APIError?) -> Void) {
         guard let request = URLRequestComposer.buildRequestFor(ShoppingCartEndpoints.removeProduct(cartItemId: id.description)) else {
             completion(.badURL)
             return
@@ -92,17 +92,17 @@ class ShoppingCartService: ShoppingCartServiceProtocol {
         }
     }
     
-    func addProduct(_ productId: Int, completion: @escaping (APIError?) -> Void) {
+    func addProduct(_ productId: Int, completion: @escaping (Result<Void, APIError>) -> Void) {
         guard let request = URLRequestComposer.buildRequestFor(ShoppingCartEndpoints.addproduct(productId: productId.description)) else {
-            completion(.badURL)
+            completion(.failure(.badURL))
             return
         }
         dispatcher.execute(request: request) { result in
             switch result {
             case .success(_):
-                completion(nil)
+                completion(.success(()))
             case .failure(let error):
-                completion(error)
+                completion(.failure(error))
             }
         }
     }

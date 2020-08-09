@@ -53,7 +53,6 @@ extension ProductListPresenter: ProductListPresenterProtocol {
     func objectAtIndexPath(_ indexPath: IndexPath) -> Product? {
         guard productModels.indices.contains(indexPath.row) else { return nil }
         return productModels[indexPath.row]
-        
     }
     
     func addToWishListPressedForItem(atIndexPath indexPath: IndexPath) {
@@ -61,17 +60,28 @@ extension ProductListPresenter: ProductListPresenterProtocol {
     }
     
     func addToCartPressedForItem(atIndexPath indexPath: IndexPath) {
-        //TODO:
+        guard productModels.indices.contains(indexPath.row) else { return }
+        let id = productModels[indexPath.row].id
+        view?.showLoading()
+        interactor?.addToCart(productId: id) { [weak self] error in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.view?.hideLoading()
+                if let error = error {
+                    self.view?.presentError(error)
+                }
+            }
+        }
     }
-    
-    func basketPressed() {
-        //TODO:
         
-    }
-    
-    func wishListPressed() {
-        //TODO:
-    }
-    
-    
+        func basketPressed() {
+            //TODO:
+            
+        }
+        
+        func wishListPressed() {
+            //TODO:
+        }
+        
+        
 }

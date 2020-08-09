@@ -10,6 +10,7 @@ import Foundation
 
 protocol ProductListInteractorProtocol {
     func fetchProducts(completion: @escaping (Result<[Product], APIError>) -> Void)
+    func addToCart(productId: Int, completion: @escaping  (APIError?) -> Void)
 }
 
 
@@ -32,6 +33,17 @@ extension ProductListInteractor: ProductListInteractorProtocol {
                 completion(.success(products))
             case.failure(let error):
                 completion(.failure(error))
+            }
+        }
+    }
+    
+    func addToCart(productId: Int, completion: @escaping  (APIError?) -> Void) {
+        service.addProduct(productId) { result in
+            switch result {
+            case.success():
+                completion(nil)
+            case.failure(let error):
+                completion((error))
             }
         }
     }

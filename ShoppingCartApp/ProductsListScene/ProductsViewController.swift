@@ -59,6 +59,9 @@ extension ProductsViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.reuseIdentifier, for: indexPath) as? ProductCollectionViewCell else { fatalError() }
         guard let model = presenter?.objectAtIndexPath(indexPath) else {fatalError("Product not found")}
         cell.updateFromModel(model)
+        cell.addToCartPressed = { [weak self] in
+            self?.presenter?.addToCartPressedForItem(atIndexPath: indexPath)
+        }
         return cell
     }
 }

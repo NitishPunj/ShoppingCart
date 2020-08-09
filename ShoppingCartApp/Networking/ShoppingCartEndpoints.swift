@@ -26,7 +26,7 @@ enum ShoppingCartEndpoints {
     case addproduct(productId: String)
     case removeProduct(cartItemId: String)
     
-    private var queryParam: URLQueryItem? {
+    private var queryItem: URLQueryItem? {
         switch self {
         case .addproduct(let productId):
             return URLQueryItem(name: "productId", value: productId)
@@ -42,7 +42,7 @@ enum ShoppingCartEndpoints {
     private var path: String {
         switch self {
         case .addproduct, .getCart, .removeProduct:
-            return "cloths/cart"
+            return "/cloths/cart"
         case .getProdutcs:
             return "/cloths/products"
         }
@@ -56,8 +56,8 @@ extension ShoppingCartEndpoints: Endpoint {
         urlComps.scheme = "https"
         urlComps.host = "2klqdzs603.execute-api.eu-west-2.amazonaws.com"
         urlComps.path = path
-        if let queryParam = queryParam {
-            urlComps.queryItems = [queryParam]
+        if let queryItem = queryItem {
+            urlComps.queryItems = [queryItem]
         }
         return urlComps.url
     }
