@@ -1,5 +1,5 @@
 //
-//  Cart.swift
+//  AppConstants.swift
 //  ShoppingCartApp
 //
 //  Created by N Sharma on 08/08/2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct CartItem: Codable {
-    let id: Int
-    let productId: Int
+struct AppConstants {
+    static let apiKey = "DDBDD5BE6E-FC3C-41E1-BEE6-347E3BCAA89B"
 }
