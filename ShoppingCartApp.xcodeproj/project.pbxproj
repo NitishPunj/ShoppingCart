@@ -38,6 +38,7 @@
 		03FCD83C24E1AAB0007BECE9 /* ProductListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83B24E1AAB0007BECE9 /* ProductListPresenterTests.swift */; };
 		03FCD83E24E1B870007BECE9 /* ProductListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83D24E1B870007BECE9 /* ProductListRouterTests.swift */; };
 		03FCD84024E1B9E4007BECE9 /* ProductListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83F24E1B9E4007BECE9 /* ProductListInteractorTests.swift */; };
+		03FCD84224E1C55E007BECE9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 03FCD84124E1C55E007BECE9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		03FCD83B24E1AAB0007BECE9 /* ProductListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenterTests.swift; sourceTree = "<group>"; };
 		03FCD83D24E1B870007BECE9 /* ProductListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouterTests.swift; sourceTree = "<group>"; };
 		03FCD83F24E1B9E4007BECE9 /* ProductListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractorTests.swift; sourceTree = "<group>"; };
+		03FCD84124E1C55E007BECE9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		03E7A14924DDDA7B000340A8 = {
 			isa = PBXGroup;
 			children = (
+				03FCD84124E1C55E007BECE9 /* README.md */,
 				03E7A15424DDDA7C000340A8 /* ShoppingCartApp */,
 				03E7A16B24DDDA7E000340A8 /* ShoppingCartAppTests */,
 				03E7A15324DDDA7C000340A8 /* Products */,
@@ -297,6 +300,7 @@
 			files = (
 				03E7A16224DDDA7E000340A8 /* LaunchScreen.storyboard in Resources */,
 				03E7A15F24DDDA7E000340A8 /* Assets.xcassets in Resources */,
+				03FCD84224E1C55E007BECE9 /* README.md in Resources */,
 				03E7A15D24DDDA7C000340A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
