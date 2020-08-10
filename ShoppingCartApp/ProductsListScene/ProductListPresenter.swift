@@ -11,7 +11,7 @@ import Foundation
 protocol ProductListPresenterProtocol : class {
     var numberOfItems: Int { get }
     func viewIsReady()
-    func objectAtIndexPath(_ indexPath: IndexPath) -> Product?
+    func itemAtIndexPath(_ indexPath: IndexPath) -> Product?
     func addToWishlistPressedForItem(atIndexPath indexPath: IndexPath)
     func addToCartPressedForItem(atIndexPath indexPath: IndexPath)
     func basketPressed()
@@ -51,7 +51,7 @@ extension ProductListPresenter: ProductListPresenterProtocol {
         }
     }
     
-    func objectAtIndexPath(_ indexPath: IndexPath) -> Product? {
+    func itemAtIndexPath(_ indexPath: IndexPath) -> Product? {
         guard productModels.indices.contains(indexPath.row) else { return nil }
         return productModels[indexPath.row]
     }
