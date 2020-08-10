@@ -9,8 +9,7 @@ Add to cart
 Remove from cart
 
 ## Architecture
-In this project I  have demonstrated my knowldege of VIPER pattern which is used  to apply the concepts of SOLID  principles.  I have used to demonstrate how we can test each component seprately using mocks and this improves the testability of code and also makes bug fixing easier. 
-
+In this project I have demonstrated my knowldege of VIPER pattern which is used to apply the concepts of SOLID  principles. We can test each component separately using mocks and this improves the overall testability of code and also makes bug fixing easier in the long run. 
 
 ### Todo:
 Wishlist functionality using persistence framework
