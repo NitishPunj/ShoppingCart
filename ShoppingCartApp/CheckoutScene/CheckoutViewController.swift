@@ -13,7 +13,6 @@ protocol CheckoutViewProtocol: class {
     func hideLoading()
     func presentError(_ error: Error)
     func updateViewState(_ state: ProductsViewState)
-    func deleteRowAt(indexPath: IndexPath)
 }
 
 class CheckoutViewController: UIViewController {
@@ -27,6 +26,14 @@ class CheckoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewIsReady()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: .cartUpdated, object: nil)
+    }
+    
+    @IBAction func dismissPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -59,12 +66,6 @@ extension CheckoutViewController: CheckoutViewProtocol {
     
     func presentError(_ error: Error) {
         showErrorAlert(title: error.localizedDescription)
-    }
-    
-    func deleteRowAt(indexPath: IndexPath) {
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        tableView.endUpdates()
     }
     
     func updateViewState(_ state: ProductsViewState) {

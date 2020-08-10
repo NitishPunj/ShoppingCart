@@ -87,7 +87,7 @@ extension CheckoutPresenter: CheckoutPresenterProtocol {
                     self.view?.presentError(error)
                 } else {
                     self.cartItemsViewModels.remove(at: indexPath.row)
-                    self.view?.deleteRowAt(indexPath: indexPath)
+                    self.view?.updateViewState(.reload)
                 }
             }
         }

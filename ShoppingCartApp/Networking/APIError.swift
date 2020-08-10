@@ -14,4 +14,16 @@ enum APIError: Error{
     case noData
     case network(error: Error)
     case statusCode(code: Int)
+    case noMoreStock
+}
+extension APIError {
+    var errorMessage: String {
+        switch self {
+        case .noMoreStock:
+           return  "Out of Stock"
+        default:
+           return "Rain check: try later"
+        }
+    }
+    
 }

@@ -15,7 +15,7 @@ enum ProductsViewState {
 protocol ProductListViewProtocol: class {
     func showLoading()
     func hideLoading()
-    func presentError(_ error: Error)
+    func presentError(_ error: APIError)
     func updateViewState(_ state: ProductsViewState)
 }
 
@@ -34,7 +34,13 @@ class ProductsViewController: UIViewController {
         super.viewDidLoad()
         collectionView.collectionViewLayout = collectionViewFlowLayout
         presenter?.viewIsReady()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshList), name: .cartUpdated, object: nil)
     }
+    
+    @objc func refreshList() {
+        presenter?.viewIsReady()
+    }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -78,8 +84,8 @@ extension ProductsViewController: ProductListViewProtocol {
         spinner.hide()
     }
     
-    func presentError(_ error: Error) {
-        showErrorAlert(title: error.localizedDescription)
+    func presentError(_ error: APIError) {
+        showErrorAlert(title: error.errorMessage)
     }
     
     func updateViewState(_ state: ProductsViewState) {
@@ -91,4 +97,9 @@ extension ProductsViewController: ProductListViewProtocol {
             collectionView.reloadData()
         }
     }
+}
+
+
+extension Notification.Name {
+    static let cartUpdated = Notification.Name("CartUpdated")
 }

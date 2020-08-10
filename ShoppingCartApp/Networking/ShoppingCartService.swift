@@ -102,7 +102,16 @@ class ShoppingCartService: ShoppingCartServiceProtocol {
             case .success(_):
                 completion(.success(()))
             case .failure(let error):
-                completion(.failure(error))
+                
+                switch error {
+                case .statusCode(let code):
+                    if code == 403 {
+                        completion(.failure(.noMoreStock))
+                    }
+                default:
+                    completion(.failure(error))
+                }
+                
             }
         }
     }

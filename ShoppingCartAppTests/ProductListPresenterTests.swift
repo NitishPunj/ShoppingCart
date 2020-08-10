@@ -157,7 +157,7 @@ private class MockView: ProductListViewProtocol {
     }
     
     var presentErrorDidCall = false
-    func presentError(_ error: Error) {
+    func presentError(_ error: APIError) {
         presentErrorDidCall = true
     }
     var updateViewStateDidCall = false
