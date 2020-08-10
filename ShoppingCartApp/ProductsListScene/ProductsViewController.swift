@@ -70,6 +70,11 @@ extension ProductsViewController: UICollectionViewDataSource {
         cell.addToCartPressed = { [weak self] in
             self?.presenter?.addToCartPressedForItem(atIndexPath: indexPath)
         }
+        
+        cell.addToWishlistPressed = { [weak self] in
+            self?.presenter?.addToWishlistPressedForItem(atIndexPath: indexPath)
+        }
+        
         return cell
     }
 }

@@ -13,10 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let window = window else { return }
         let navigationController = window.rootViewController as! UINavigationController
-        var vc: ProductsViewController {
-            return ProductListRouter.buildController(service: ShoppingCartService())
-        }
+        let vc: ProductsViewController = ProductListRouter.buildController(service: ShoppingCartService())
         navigationController.setViewControllers([vc], animated: true)
     }
 }
-

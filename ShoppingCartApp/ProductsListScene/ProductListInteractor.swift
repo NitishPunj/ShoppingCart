@@ -11,15 +11,18 @@ import Foundation
 protocol ProductListInteractorProtocol {
     func fetchProducts(completion: @escaping (Result<[Product], APIError>) -> Void)
     func addToCart(productId: Int, completion: @escaping  (APIError?) -> Void)
+    func addToWishlist(product: Product)
 }
 
 
 class ProductListInteractor {
     
     private let service: ShoppingCartServiceProtocol
+    private let store: DataStoreProtocol
     
-    init(service: ShoppingCartServiceProtocol) {
+    init(service: ShoppingCartServiceProtocol, store: DataStoreProtocol) {
         self.service = service
+        self.store = store
     }
 }
 
@@ -45,6 +48,10 @@ extension ProductListInteractor: ProductListInteractorProtocol {
                 completion((error))
             }
         }
+    }
+    
+    func addToWishlist(product: Product) {
+        store.addToWishlist(product)
     }
 }
 

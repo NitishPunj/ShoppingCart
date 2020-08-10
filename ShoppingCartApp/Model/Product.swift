@@ -34,3 +34,5 @@ extension Product {
         return oldPrice != nil
     }
 }
+
+extension Product: ProductViewModel {}

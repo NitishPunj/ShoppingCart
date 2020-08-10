@@ -24,7 +24,7 @@ class ProductListRouter {
             let presenter = ProductListPresenter()
             presenter.view = controller
 
-            let interactor = ProductListInteractor(service: service)
+            let interactor = ProductListInteractor(service: service, store: RealmDataStore.shared)
             presenter.interactor = interactor
             let router = ProductListRouter()
             router.viewController = controller

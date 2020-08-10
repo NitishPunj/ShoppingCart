@@ -57,7 +57,7 @@ extension ProductListPresenter: ProductListPresenterProtocol {
     }
     
     func addToWishlistPressedForItem(atIndexPath indexPath: IndexPath) {
-        //TODO:
+        interactor?.addToWishlist(product: productModels[indexPath.row])
     }
     
     func addToCartPressedForItem(atIndexPath indexPath: IndexPath) {

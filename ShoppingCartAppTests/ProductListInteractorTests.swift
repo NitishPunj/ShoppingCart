@@ -17,7 +17,7 @@ class ProductListInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         service = MockService()
-        sut = ProductListInteractor(service: service)
+        sut = ProductListInteractor(service: service, store: MockStore())
     }
     
     override func tearDown() {
@@ -61,5 +61,20 @@ private class MockService: ShoppingCartServiceProtocol {
     
     func addProduct(_ productId: Int, completion: @escaping (Result<Void, APIError>) -> Void) {
         throwError ? completion(.failure(APIError.noData)) : completion(.success(()))
+    }
+}
+
+private class MockStore: DataStoreProtocol {
+    func fetchWishlist() -> [ProductViewModel] {
+        return []
+    }
+    
+    func addToWishlist(_ product: ProductViewModel) {
+    }
+    
+    func removeFromWishlist(_ product: ProductViewModel) {
+    }
+    
+    func deleteAll() {
     }
 }

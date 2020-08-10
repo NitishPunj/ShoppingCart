@@ -132,6 +132,13 @@ class ProductListPresenterTests: XCTestCase {
         XCTAssertTrue(router.openWishListdidCall)
     }
     
+    func test_addToWishlist() {
+        XCTAssertFalse(interactor.addToWishListDidCall)
+        sut.productModels = products
+        sut.addToWishlistPressedForItem(atIndexPath: IndexPath(row: 1, section: 0))
+        XCTAssertTrue(interactor.addToWishListDidCall)
+    }
+    
 }
 
 private class MockRouter: ProductListRouterProtocol {
@@ -167,6 +174,10 @@ private class MockView: ProductListViewProtocol {
 }
 
 private class MockInteractor: ProductListInteractorProtocol {
+    var addToWishListDidCall = false
+    func addToWishlist(product: Product) {
+        addToWishListDidCall = true
+    }
     
     var result: Result<[Product], APIError>?
     var throwError = false

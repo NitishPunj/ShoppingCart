@@ -22,13 +22,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var outOfStockIcon: UIImageView!
     
     var addToCartPressed: (()->Void)?
+    var addToWishlistPressed: (()->Void)?
     
     @IBAction func addPressed() {
         addToCartPressed?()
     }
     
     @IBAction func wishlistPressed() {
-        //TODO:
+        addToWishlistPressed?()
     }
     
     override func prepareForReuse() {
