@@ -4,12 +4,12 @@
 ShoppingCartApp  is a  test project app which consumes a RESTful API to demonstrate a shopping cart application. 
 
 ## Functionality
-List of products
-Add to cart
-Remove from cart
-Add to wishlist
-Remove from wish list
-Offline storage
+-List of products
+-Add to cart
+-Remove from cart
+-Add to wishlist
+-Remove from wish list
+-Offline storage
 
 ## Architecture
 In this project I have demonstrated my knowldege of VIPER pattern which is used to apply the concepts of SOLID  principles. We can test each component separately using mocks and this improves the overall testability of code and also makes bug fixing easier in the long run. Unit tests have been added to cover ProductList scene as well ShoppingCartService layer. 
