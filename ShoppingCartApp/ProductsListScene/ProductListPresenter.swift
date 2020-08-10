@@ -22,7 +22,7 @@ class ProductListPresenter {
     var router: ProductListRouterProtocol?
     weak var view: ProductListViewProtocol?
     var interactor: ProductListInteractorProtocol?
-    private var productModels: [Product] = []
+    var productModels: [Product] = []
 }
 
 extension ProductListPresenter: ProductListPresenterProtocol {

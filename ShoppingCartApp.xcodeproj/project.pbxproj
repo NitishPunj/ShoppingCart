@@ -35,6 +35,9 @@
 		03E7A1B724E174DB000340A8 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A1B624E174DB000340A8 /* UIViewController+extensions.swift */; };
 		03FCD83424E17DD0007BECE9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83324E17DD0007BECE9 /* ActionButton.swift */; };
 		03FCD83724E182B0007BECE9 /* ShoppingCartServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83624E182B0007BECE9 /* ShoppingCartServiceTests.swift */; };
+		03FCD83C24E1AAB0007BECE9 /* ProductListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83B24E1AAB0007BECE9 /* ProductListPresenterTests.swift */; };
+		03FCD83E24E1B870007BECE9 /* ProductListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83D24E1B870007BECE9 /* ProductListRouterTests.swift */; };
+		03FCD84024E1B9E4007BECE9 /* ProductListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83F24E1B9E4007BECE9 /* ProductListInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		03FCD83324E17DD0007BECE9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		03FCD83524E182B0007BECE9 /* ShoppingCartAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCartAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		03FCD83624E182B0007BECE9 /* ShoppingCartServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartServiceTests.swift; sourceTree = "<group>"; };
+		03FCD83B24E1AAB0007BECE9 /* ProductListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenterTests.swift; sourceTree = "<group>"; };
+		03FCD83D24E1B870007BECE9 /* ProductListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouterTests.swift; sourceTree = "<group>"; };
+		03FCD83F24E1B9E4007BECE9 /* ProductListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 			children = (
 				03E7A16E24DDDA7E000340A8 /* Info.plist */,
 				03FCD83624E182B0007BECE9 /* ShoppingCartServiceTests.swift */,
+				03FCD83B24E1AAB0007BECE9 /* ProductListPresenterTests.swift */,
+				03FCD83F24E1B9E4007BECE9 /* ProductListInteractorTests.swift */,
+				03FCD83D24E1B870007BECE9 /* ProductListRouterTests.swift */,
 				03FCD83524E182B0007BECE9 /* ShoppingCartAppTests-Bridging-Header.h */,
 			);
 			path = ShoppingCartAppTests;
@@ -337,6 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FCD84024E1B9E4007BECE9 /* ProductListInteractorTests.swift in Sources */,
+				03FCD83E24E1B870007BECE9 /* ProductListRouterTests.swift in Sources */,
+				03FCD83C24E1AAB0007BECE9 /* ProductListPresenterTests.swift in Sources */,
 				03FCD83724E182B0007BECE9 /* ShoppingCartServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
