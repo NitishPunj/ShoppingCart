@@ -25,8 +25,6 @@ class ProductsViewController: UIViewController {
     let spinner = Spinner()
     var presenter: ProductListPresenterProtocol?
     
-    var products: [Product] = []
-    
     lazy var collectionViewFlowLayout : ProductCollectionViewFlowLoayout = {
         let layout = ProductCollectionViewFlowLoayout(display: .list, containerWidth: view.bounds.width)
         return layout
@@ -47,6 +45,10 @@ class ProductsViewController: UIViewController {
         collectionViewFlowLayout.containerWidth = width
         collectionViewFlowLayout.display = view.traitCollection.horizontalSizeClass == .compact && view.traitCollection.verticalSizeClass == .regular ? .list : .grid(columns: 4)
     }
+    
+    @IBAction func basketPressed(_ sender: Any) {
+        presenter?.basketPressed()
+    }
 }
 
 extension ProductsViewController: UICollectionViewDataSource {
@@ -58,7 +60,7 @@ extension ProductsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.reuseIdentifier, for: indexPath) as? ProductCollectionViewCell else { fatalError() }
         guard let model = presenter?.objectAtIndexPath(indexPath) else {fatalError("Product not found")}
-        cell.updateFromModel(model)
+        cell.updateWithModel(model)
         cell.addToCartPressed = { [weak self] in
             self?.presenter?.addToCartPressedForItem(atIndexPath: indexPath)
         }

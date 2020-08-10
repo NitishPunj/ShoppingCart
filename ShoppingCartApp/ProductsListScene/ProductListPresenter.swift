@@ -12,7 +12,7 @@ protocol ProductListPresenterProtocol : class {
     var numberOfItems: Int { get }
     func viewIsReady()
     func objectAtIndexPath(_ indexPath: IndexPath) -> Product?
-    func addToWishListPressedForItem(atIndexPath indexPath: IndexPath)
+    func addToWishlistPressedForItem(atIndexPath indexPath: IndexPath)
     func addToCartPressedForItem(atIndexPath indexPath: IndexPath)
     func basketPressed()
     func wishListPressed()
@@ -26,6 +26,7 @@ class ProductListPresenter {
 }
 
 extension ProductListPresenter: ProductListPresenterProtocol {
+    
     var numberOfItems: Int {
         return productModels.count
     }
@@ -55,7 +56,7 @@ extension ProductListPresenter: ProductListPresenterProtocol {
         return productModels[indexPath.row]
     }
     
-    func addToWishListPressedForItem(atIndexPath indexPath: IndexPath) {
+    func addToWishlistPressedForItem(atIndexPath indexPath: IndexPath) {
         //TODO:
     }
     
@@ -73,15 +74,13 @@ extension ProductListPresenter: ProductListPresenterProtocol {
             }
         }
     }
-        
-        func basketPressed() {
-            //TODO:
-            
-        }
-        
-        func wishListPressed() {
-            //TODO:
-        }
-        
-        
+    
+    func basketPressed() {
+        router?.goToCheckOut(productModels)
+    }
+    
+    func wishListPressed() {
+        router?.openWishlist()
+    }
 }
+

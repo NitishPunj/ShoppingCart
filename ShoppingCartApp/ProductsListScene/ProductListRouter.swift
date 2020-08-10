@@ -9,8 +9,8 @@
 import UIKit
 
 protocol ProductListRouterProtocol {
-    func openWishList()
-    func goToCheckOut()
+    func openWishlist()
+    func goToCheckOut(_ products:[Product])
 }
 
 class ProductListRouter {
@@ -37,12 +37,13 @@ class ProductListRouter {
 }
 
 extension ProductListRouter: ProductListRouterProtocol {
-    func openWishList() {
+    func openWishlist() {
         //TODO:
     }
     
-    func goToCheckOut() {
-        //TODO:
+    func goToCheckOut(_ products:[Product]) {
+        let checkoutVc = CheckoutRouter.buildController(service: ShoppingCartService(), products: products)
+        viewController?.present(checkoutVc, animated: true, completion: nil)
     }
 }
 

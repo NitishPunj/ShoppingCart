@@ -26,7 +26,6 @@ class ProductListInteractor {
 extension ProductListInteractor: ProductListInteractorProtocol {
     
     func fetchProducts(completion: @escaping (Result<[Product], APIError>) -> Void) {
-        
         service.getProducts { result in
             switch result {
             case.success(let products):

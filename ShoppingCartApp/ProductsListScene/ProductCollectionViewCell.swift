@@ -40,7 +40,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 }
 
 extension ProductCollectionViewCell {
-    func updateFromModel(_ model: Product) {
+    func updateWithModel(_ model: Product) {
         nameLabel.text = model.name
         priceLabel.text = model.price
         beforePriceLabel.isHidden = model.isOnSale == false
