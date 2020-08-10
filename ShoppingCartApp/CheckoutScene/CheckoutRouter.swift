@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol CheckoutRouterProtocol {
-    
-}
+protocol CheckoutRouterProtocol {}
 
 class CheckoutRouter {
     

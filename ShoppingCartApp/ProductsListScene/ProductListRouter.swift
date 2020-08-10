@@ -31,14 +31,15 @@ class ProductListRouter {
             presenter.router = router
             return presenter
         }()
-        
         return controller
     }
 }
 
 extension ProductListRouter: ProductListRouterProtocol {
+    
     func openWishlist() {
-        //TODO:
+        let wishListVC = WishlistRouter.buildController(service: ShoppingCartService())
+        viewController?.present(wishListVC, animated: true, completion: nil)
     }
     
     func goToCheckOut(_ products:[Product]) {

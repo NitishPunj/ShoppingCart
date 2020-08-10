@@ -176,6 +176,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="bookmark.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="wishlistPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y97-14-QIm"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="hcn-4F-U4b">
@@ -199,19 +202,19 @@
             </objects>
             <point key="canvasLocation" x="1057.9710144927537" y="112.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Wishlist View Controller-->
         <scene sceneID="0Na-Vy-Z7I">
             <objects>
-                <viewController id="zoJ-nS-tOS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishlistViewController" id="zoJ-nS-tOS" customClass="WishlistViewController" customModule="ShoppingCartApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pha-St-9jf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xt3-k8-yIp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xt3-k8-yIp">
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="181" id="1Wj-0s-xWr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishlistTableViewCell" rowHeight="181" id="1Wj-0s-xWr" customClass="WishlistTableViewCell" customModule="ShoppingCartApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Wj-0s-xWr" id="lra-a2-MhE">
@@ -225,8 +228,8 @@
                                                         <constraint firstAttribute="width" constant="240" id="Ywk-SR-zYE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Price}" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZE-C2-gEy">
-                                                    <rect key="frame" x="240" y="0.0" width="154" height="26.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Price}" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZE-C2-gEy">
+                                                    <rect key="frame" x="240" y="60" width="154" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -237,21 +240,42 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-Z2-u9q">
+                                                    <rect key="frame" x="258" y="96" width="146" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Fga-QY-kjO"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Remove from wishlist"/>
+                                                    <connections>
+                                                        <action selector="removePressed:" destination="1Wj-0s-xWr" eventType="touchUpInside" id="cmO-qe-A1n"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="3Am-LN-SbX" secondAttribute="trailing" constant="20" id="3mT-3U-RvT"/>
-                                                <constraint firstItem="LZE-C2-gEy" firstAttribute="top" secondItem="lra-a2-MhE" secondAttribute="top" id="5DN-qK-QeQ"/>
+                                                <constraint firstItem="LZE-C2-gEy" firstAttribute="top" secondItem="lra-a2-MhE" secondAttribute="top" constant="60" id="5DN-qK-QeQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="3Am-LN-SbX" secondAttribute="bottom" id="Psl-wL-KLV"/>
                                                 <constraint firstItem="yDA-EI-ufs" firstAttribute="top" secondItem="lra-a2-MhE" secondAttribute="top" id="Zxi-C7-Ccg"/>
+                                                <constraint firstItem="3Am-LN-SbX" firstAttribute="top" secondItem="ZVm-Z2-u9q" secondAttribute="bottom" constant="10" id="eTz-vK-BPP"/>
                                                 <constraint firstItem="LZE-C2-gEy" firstAttribute="leading" secondItem="yDA-EI-ufs" secondAttribute="trailing" id="hm5-XP-Q8N"/>
                                                 <constraint firstAttribute="trailing" secondItem="LZE-C2-gEy" secondAttribute="trailing" constant="20" id="hvM-HT-yD8"/>
                                                 <constraint firstItem="yDA-EI-ufs" firstAttribute="leading" secondItem="lra-a2-MhE" secondAttribute="leading" id="lap-N8-jfG"/>
+                                                <constraint firstItem="ZVm-Z2-u9q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yDA-EI-ufs" secondAttribute="trailing" constant="8" symbolic="YES" id="rgw-SY-twO"/>
                                                 <constraint firstItem="3Am-LN-SbX" firstAttribute="leading" secondItem="lra-a2-MhE" secondAttribute="leading" constant="20" id="sXB-wS-CdH"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZVm-Z2-u9q" secondAttribute="trailing" constant="10" id="urc-VJ-2df"/>
                                                 <constraint firstItem="3Am-LN-SbX" firstAttribute="top" secondItem="yDA-EI-ufs" secondAttribute="bottom" constant="8" id="wsY-9L-mYY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="3Am-LN-SbX" id="EhP-gw-7vL"/>
+                                            <outlet property="priceLabel" destination="LZE-C2-gEy" id="eIF-t7-s0I"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zoJ-nS-tOS" id="0OB-Zz-cPj"/>
+                                    <outlet property="delegate" destination="zoJ-nS-tOS" id="72X-gk-x1X"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcS-0b-ej5">
                                 <rect key="frame" x="20" y="44" width="374" height="52"/>
@@ -268,7 +292,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="clear" catalog="system"/>
                                 <connections>
-                                    <action selector="dismissPressed:" destination="HcY-Mf-s3f" eventType="touchUpInside" id="4Bj-sC-8Zh"/>
+                                    <action selector="dismissPressed:" destination="zoJ-nS-tOS" eventType="touchUpInside" id="KIB-Ao-adr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -287,6 +311,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sdq-9C-wCL"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Xt3-k8-yIp" id="AFP-U0-JzS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB7-jf-srF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
