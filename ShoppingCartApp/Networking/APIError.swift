@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum APIError: Error {
+enum APIError: Error{
     case badURL
     case decoding(error: Error)
     case noData

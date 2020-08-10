@@ -12,7 +12,6 @@
 		03E7A15D24DDDA7C000340A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E7A15B24DDDA7C000340A8 /* Main.storyboard */; };
 		03E7A15F24DDDA7E000340A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E7A15E24DDDA7E000340A8 /* Assets.xcassets */; };
 		03E7A16224DDDA7E000340A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E7A16024DDDA7E000340A8 /* LaunchScreen.storyboard */; };
-		03E7A16D24DDDA7E000340A8 /* ShoppingCartAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A16C24DDDA7E000340A8 /* ShoppingCartAppTests.swift */; };
 		03E7A17F24DED1BF000340A8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A17E24DED1BF000340A8 /* Product.swift */; };
 		03E7A18224DED793000340A8 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A18124DED793000340A8 /* Cart.swift */; };
 		03E7A18724DEE07F000340A8 /* ShoppingCartEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A18624DEE07F000340A8 /* ShoppingCartEndpoints.swift */; };
@@ -35,6 +34,7 @@
 		03E7A1B524E1613E000340A8 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A1B424E1613E000340A8 /* CartItemTableViewCell.swift */; };
 		03E7A1B724E174DB000340A8 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7A1B624E174DB000340A8 /* UIViewController+extensions.swift */; };
 		03FCD83424E17DD0007BECE9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83324E17DD0007BECE9 /* ActionButton.swift */; };
+		03FCD83724E182B0007BECE9 /* ShoppingCartServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCD83624E182B0007BECE9 /* ShoppingCartServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,6 @@
 		03E7A16124DDDA7E000340A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03E7A16324DDDA7E000340A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E7A16824DDDA7E000340A8 /* ShoppingCartAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingCartAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03E7A16C24DDDA7E000340A8 /* ShoppingCartAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartAppTests.swift; sourceTree = "<group>"; };
 		03E7A16E24DDDA7E000340A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E7A17E24DED1BF000340A8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		03E7A18124DED793000340A8 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -80,6 +79,8 @@
 		03E7A1B424E1613E000340A8 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		03E7A1B624E174DB000340A8 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		03FCD83324E17DD0007BECE9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		03FCD83524E182B0007BECE9 /* ShoppingCartAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCartAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		03FCD83624E182B0007BECE9 /* ShoppingCartServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +140,9 @@
 		03E7A16B24DDDA7E000340A8 /* ShoppingCartAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				03E7A16C24DDDA7E000340A8 /* ShoppingCartAppTests.swift */,
 				03E7A16E24DDDA7E000340A8 /* Info.plist */,
+				03FCD83624E182B0007BECE9 /* ShoppingCartServiceTests.swift */,
+				03FCD83524E182B0007BECE9 /* ShoppingCartAppTests-Bridging-Header.h */,
 			);
 			path = ShoppingCartAppTests;
 			sourceTree = "<group>";
@@ -255,6 +257,7 @@
 					};
 					03E7A16724DDDA7E000340A8 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 03E7A15124DDDA7C000340A8;
 					};
 				};
@@ -334,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E7A16D24DDDA7E000340A8 /* ShoppingCartAppTests.swift in Sources */,
+				03FCD83724E182B0007BECE9 /* ShoppingCartServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingCartApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingCartApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +526,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingCartAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -531,6 +537,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharma.ShoppingCartAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCartAppTests/ShoppingCartAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingCartApp.app/ShoppingCartApp";
@@ -542,6 +550,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingCartAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -552,6 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharma.ShoppingCartAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCartAppTests/ShoppingCartAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingCartApp.app/ShoppingCartApp";

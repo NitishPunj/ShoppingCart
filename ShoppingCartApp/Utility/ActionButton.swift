@@ -7,8 +7,9 @@
 //
 
 import UIKit
-class ActionButton: UIButton {
 
+class ActionButton: UIButton {
+    
     override public var isEnabled: Bool {
         didSet {
             if isEnabled {
@@ -18,5 +19,4 @@ class ActionButton: UIButton {
             }
         }
     }
-
 }
