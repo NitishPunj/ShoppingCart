@@ -79,6 +79,7 @@ extension ProductsViewController: ProductListViewProtocol {
     }
     
     func presentError(_ error: Error) {
+        showErrorAlert(title: error.localizedDescription)
     }
     
     func updateViewState(_ state: ProductsViewState) {

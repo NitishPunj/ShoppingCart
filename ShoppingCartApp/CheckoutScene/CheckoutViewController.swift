@@ -47,7 +47,6 @@ extension CheckoutViewController: UITableViewDataSource {
     }
 }
 
-
 extension CheckoutViewController: CheckoutViewProtocol {
     
     func showLoading() {
@@ -59,7 +58,7 @@ extension CheckoutViewController: CheckoutViewProtocol {
     }
     
     func presentError(_ error: Error) {
-        
+        showErrorAlert(title: error.localizedDescription)
     }
     
     func deleteRowAt(indexPath: IndexPath) {
